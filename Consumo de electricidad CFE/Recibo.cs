@@ -62,9 +62,9 @@ public class Recibo
     }
     public void ImprimirInfo()
     {
-        var delimitador = new string('*', 50);
+        var delimitador = new string('*', 54);
         Console.WriteLine(delimitador);
-        Console.WriteLine($"Consumo de {ConsumoTotal}kWh en {Dias} días. Precio final: {this.PrecioFinal:C2}");
+        Console.WriteLine($"Consumo de {ConsumoTotal:F2}kWh en {Dias} días. Precio final: {this.PrecioFinal:C2}");
         if (DAC != 0)
         {
             Console.WriteLine($"\tDAC: {DAC}");
@@ -72,11 +72,29 @@ public class Recibo
         else
         {
             Console.WriteLine($"");
-            Console.WriteLine($"\tBásico:\t\t{basico}kWh");
-            Console.WriteLine($"\tIntermedio:\t{intermedio}kWh");
-            Console.WriteLine($"\tExcedente:\t{excedente}kWh");
+            Console.WriteLine($"\tBásico:\t\t{basico:F2}kWh");
+            Console.WriteLine($"\tIntermedio:\t{intermedio:F2}kWh");
+            Console.WriteLine($"\tExcedente:\t{excedente:F2}kWh");
         }
         Console.WriteLine($"Consumo diario promedio: {PromedioConsumoPorDia:F2}kWh");
+        Console.WriteLine(delimitador);
+    }
+    public void ImprimirInfoBasica()
+    {
+        var delimitador = new string('*', 54);
+        Console.WriteLine(delimitador);
+        Console.WriteLine($"Consumo de {ConsumoTotal:F2}kWh. Precio final: {this.PrecioFinal:C2}");
+        if (DAC != 0)
+        {
+            Console.WriteLine($"\tDAC: {DAC}");
+        }
+        else
+        {
+            Console.WriteLine($"");
+            Console.WriteLine($"\tBásico:\t\t{basico:F2}kWh");
+            Console.WriteLine($"\tIntermedio:\t{intermedio:F2}kWh");
+            Console.WriteLine($"\tExcedente:\t{excedente:F2}kWh");
+        }
         Console.WriteLine(delimitador);
     }
 }

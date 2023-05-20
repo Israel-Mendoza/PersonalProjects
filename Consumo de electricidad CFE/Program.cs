@@ -46,7 +46,7 @@ DateTime ObtenerFechaValida(string mensaje)
         }
         else
         {
-            Console.WriteLine($"{input} no es un formato válido de fecha. Intente de nuevo.\n");
+            Console.WriteLine($"'{input}' no es un formato válido de fecha. Intente de nuevo.\n");
         }
     }
 }
@@ -64,4 +64,4 @@ miRecibo.ImprimirInfo();
 
 var futuroRecibo = new Recibo(miRecibo.PromedioConsumoPorDia * 61, fechaInicial);
 Console.WriteLine($"\nPosible futuro recibo: \n");
-futuroRecibo.ImprimirInfo();
+futuroRecibo.ImprimirInfoBasica();
